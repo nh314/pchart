@@ -1,0 +1,48 @@
+[
+  {
+    "age": 25,
+    "eyeColor": "blue",
+    "name": "Crosby Gay"
+  },
+  {
+    "eyeColor": "green",
+    "name": "Ila Stewart"
+  },
+  {
+    "age": 26,
+    "eyeColor": "brown",
+    "name": "Murphy Humphrey"
+  },
+  {
+    "age": 29,
+    "eyeColor": "blue",
+    "name": "Gray Olsen"
+  },
+  {
+    "age": 38,
+    "eyeColor": "blue"
+  },
+  {
+    "age": 28,
+    "eyeColor": "brown",
+    "name": "Barker Christian"
+  },
+  {
+    "age": 26,
+    "eyeColor": "green",
+    "name": "Hatfield Fuentes"
+  },
+  {
+    "age": 31,
+    "eyeColor": "green",
+    "name": "Greta Jensen"
+  },
+  {
+    "eyeColor": "brown"
+  },
+  {
+    "age": 25,
+    "eyeColor": "brown",
+    "name": "Amelia Peterson"
+  }
+]

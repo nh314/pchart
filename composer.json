@@ -1,0 +1,16 @@
+{
+    "name": "nh314/pchart",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Parobit",
+            "email": "nh314@outlook.com"
+        }
+    ],
+    "require": {},
+    "require-dev": {
+        "fxp/composer-asset-plugin": "^1.3",
+        "bower-asset/chart.js": "^2.5",
+        "mistic100/randomcolor": "^1.0"
+    }
+}
