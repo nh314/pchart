@@ -1,7 +1,7 @@
 <?php
 
-include "../src/ChartBase.php";
-include "../src/ChartjsChart.php";
+include dirname(__FILE__)."/../src/ChartBase.php";
+include dirname(__FILE__)."/../src/ChartjsChart.php";
 
 use PHPUnit\Framework\TestCase;
 
@@ -9,7 +9,7 @@ class StackTest extends TestCase
 {
     public function testSingleDataSource()
     {
-        $string = file_get_contents("chartjstestdata01.txt");
+        $string = file_get_contents(dirname(__FILE__)."/test_data/data01.txt");
 
         $dataSources = [json_decode($string)];
         
@@ -25,7 +25,6 @@ class StackTest extends TestCase
 
         $this->assertEquals( count($chart->config['data']['datasets'][0]['data']), 10, "Numer of record is 10.");
 
-        $string = file_get_contents("chartjstestdata01.txt");
 
     }
     
