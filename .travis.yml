@@ -7,9 +7,7 @@ php:
   - nightly
 before_script:
   - wget https://phar.phpunit.de/phpunit-5.7.phar
+  - chmod +x phpunit-5.7.phar
+  - if [[ ${TRAVIS_PHP_VERSION:0:3} == "5.6" ]]; then mv phpunit-5.7.phar /usr/local/bin/phpunit ; fi
 script:
-    - 'if [ ${TRAVIS_PHP_VERSION} == "5.6" ]; then
-          php phpunit-5.7.phar tests/ChartjsChartTest.php
-      else
-          phpunit tests/ChartjsChartTest.php
-      fi'
+  - phpunit tests/ChartjsChartTest.php
