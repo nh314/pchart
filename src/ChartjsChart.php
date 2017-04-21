@@ -79,7 +79,6 @@ class ChartjsChart extends ChartBase
 
     public function createChartData($labels, $field)
     {
-        
         $dataSets = $this->getField($field);
         $data = [];
         foreach ($dataSets as $key => $dataSet) {
@@ -96,6 +95,7 @@ class ChartjsChart extends ChartBase
         $dataSets = $this->getFields(['x' => $x, 'y' => $y, 'r' => $size]);
         
         $data = [];
+        
         foreach ($dataSets as $key => $dataSet) {
             $data[$key]['data'] = $dataSet;
             $data[$key]['label'] = $labels[$key];

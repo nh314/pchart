@@ -1,0 +1,58 @@
+{
+  "type": "line",
+  "params": [["Age"], "age"],
+  "data": [
+    [
+      {
+        "age": 40,
+        "eyeColor": "brown",
+        "name": "Lindsay Mcbride"
+      },
+      {
+        "age": 34,
+        "eyeColor": "blue",
+        "name": "Leticia Shelton"
+      },
+      {
+        "age": 28,
+        "eyeColor": "blue",
+        "name": "Charity Nash"
+      },
+      {
+        "age": 26,
+        "eyeColor": "green",
+        "name": "Warner Owen"
+      },
+      {
+        "age": 29,
+        "eyeColor": "green",
+        "name": "Minnie Lowery"
+      },
+      {
+        "age": 26,
+        "eyeColor": "brown",
+        "name": "Bryant Valdez"
+      },
+      {
+        "age": 21,
+        "eyeColor": "green",
+        "name": "Lillie Padilla"
+      },
+      {
+        "age": 30,
+        "eyeColor": "green",
+        "name": "Alba Donovan"
+      },
+      {
+        "age": 27,
+        "eyeColor": "blue",
+        "name": "Esther Hewitt"
+      },
+      {
+        "age": 38,
+        "eyeColor": "brown",
+        "name": "Louisa Sexton"
+      }
+    ]
+  ]
+}

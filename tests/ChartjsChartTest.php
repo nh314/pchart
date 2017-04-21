@@ -7,24 +7,43 @@ use PHPUnit\Framework\TestCase;
 
 class StackTest extends TestCase
 {
+    
+    private function loadDataFile()
+    {
+        $dataFile = array_diff(scandir('test_data'), array('..', '.'));
+        $dataSource = [];
+        foreach ($dataFile as $key => $file) {
+            $string = file_get_contents(dirname(__FILE__).'/test_data/'.$file);
+            $dataSource[$key] = json_decode($string);
+        }
+        $dataSources = array_values(array_filter($dataSource));
+
+        return $dataSources;
+    }
+
     public function testSingleDataSource()
     {
-        $string = file_get_contents(dirname(__FILE__)."/test_data/data01.txt");
-
-        $dataSources = [json_decode($string)];
         
-        $chart = new ChartjsChart($dataSources);
-        
-        $sourceSetCount = count($dataSources);
+        $dataSources = $this->loadDataFile();
 
-        $chartSourceSetCount = count( $chart->dataSource );
+        foreach ($dataSources as $dataSource) {
+            if( !isset($dataSource->data) || !isset($dataSource->type) || !isset($dataSource->params) ) {
+                continue;
+            }
+            
+            $chart = new ChartjsChart($dataSource->data, $dataSource->type);
+            
+            $sourceSetCount = count($dataSource->data);
+            
+            $chartSourceSetCount = count( $chart->getDataSource() );
+            
+            $this->assertEquals( $sourceSetCount, $chartSourceSetCount, 'Test number of datasets.');
 
-        $this->assertEquals( $sourceSetCount, $chartSourceSetCount, 'Number of dataset is '.count($dataSources));
+            call_user_func_array(array($chart, 'createData'), $dataSource->params);
+            
+            $this->assertEquals(count($dataSource->data[0]), count($chart->config['data']['datasets'][0]['data']), "Test number of records." );
 
-        $chart->createData(['Age'], 'age');
-
-        $this->assertEquals( count($chart->config['data']['datasets'][0]['data']), 10, "Numer of record is 10.");
-
+        }
 
     }
     
